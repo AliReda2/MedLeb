@@ -1,0 +1,212 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    font-family: 'Poppins', sans-serif;
+    background-color: #FAFAFA;
+}
+#wave{
+    position: absolute;
+    z-index: -99;
+}
+#logo{
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    font-size: 2rem;
+    color: #fff;
+    padding: 6vh;
+}
+
+nav a{
+    text-decoration: none;
+}
+
+.symptoms-inp input{
+    border: 2px solid #FF695E;
+    border-radius: 10px;
+    font-size: 20px;
+    width: 80%;
+    padding: 5px
+}
+
+
+.submit-btn{
+    background-color: #FF695E;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+
+}
+.row{
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 0vh 10vw;
+
+}
+.home_main{
+background-color: white;
+width: 30vw;
+padding: 30px;
+text-align: center;
+border-radius: 15px;
+}
+.doc_image{
+width: 40vw;
+margin-top: -50px;
+}
+
+.pred {
+  border: 2px solid #FF695E;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  transition: background-color 0.5s ease-in-out; 
+}
+
+.pred.selected {
+  background-color: #c04507;
+  color: white; 
+}
+
+.pred:hover {
+  background-color: #FF695E; /* Change the background color on hover */
+  color: #ffffff;
+}
+
+.details{
+background-color: white;
+width: 40vw;
+padding: 20px;
+}
+
+.details h3{
+text-align: center;
+font-size: xxx-large;
+font-style: inherit;
+
+}
+
+.details div.show {
+    display: block;
+}
+
+.details div {
+display: none;
+
+}
+
+.info {
+font-size: large;
+text-align: justify;
+padding: 50px;
+padding-top: 0;
+}
+.right-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#quoteContainer {
+  text-align: center;
+  font-style: italic;
+  width: 40vw;
+  background-color: rgb(0, 0, 0);
+  color: #FF695E;
+  font-weight: bold;
+  padding: 0px 10px;
+  margin: 50px;
+  box-shadow: 3px 8px 23px -2px rgba(0,0,0,0.81);
+-webkit-box-shadow: 3px 8px 23px -2px rgba(0,0,0,0.81);
+-moz-box-shadow: 3px 8px 23px -2px rgba(0,0,0,0.81);
+}
+
+@property --progress-value {
+  syntax: '<integer>';
+  inherits: true;
+  initial-value: 0;
+}
+
+:root {
+  --progress-bar-color: #cfd8dc;
+  --progress-value-color: #2196f3;
+  --progress-empty-color-h: 4.1;
+  --progress-empty-color-s: 89.6;
+  --progress-empty-color-l: 58.4;
+  --progress-filled-color-h: 122.4;
+  --progress-filled-color-s: 39.4;
+  --progress-filled-color-l: 49.2;
+}
+progress[value] {
+  display: block;
+  position: relative;
+  appearance: none;
+  width: 80%;
+  height: 6px;
+  border: 0;
+  --border-radius: 10px;
+  border-radius: var(--border-radius);
+  counter-reset: progress var(--progress-value);
+  --progress-value-string: counter(progress) '%';
+  --progress-max-decimal: calc(var(--value, 0) / var(--max, 0));
+  --progress-value-decimal: calc(var(--progress-value, 0) / var(--max, 0));
+  @supports selector(::-moz-progress-bar) {
+    --progress-value-decimal: calc(var(--value, 0) / var(--max, 0));
+  }
+  --progress-value-percent: calc(var(--progress-value-decimal) * 100%);
+  --progress-value-color: hsl(
+    calc((var(--progress-empty-color-h) + (var(--progress-filled-color-h) - var(--progress-empty-color-h)) * var(--progress-value-decimal)) * 1deg)
+    calc((var(--progress-empty-color-s) + (var(--progress-filled-color-s) - var(--progress-empty-color-s)) * var(--progress-value-decimal)) * 1%)
+    calc((var(--progress-empty-color-l) + (var(--progress-filled-color-l) - var(--progress-empty-color-l)) * var(--progress-value-decimal)) * 1%)
+  );
+  animation: calc(3s * var(--progress-max-decimal)) linear 0.5s 1 normal both progress;
+}
+
+progress[value]::-webkit-progress-bar {
+  background-color: var(--progress-bar-color);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+}
+
+progress[value]::-webkit-progress-value {
+  width: var(--progress-value-percent) !important;
+  background-color: var(--progress-value-color);
+  border-radius: var(--border-radius);
+}
+
+progress[value]::-moz-progress-bar {
+  width: var(--progress-value-percent) !important;
+  background-color: var(--progress-value-color);
+  border-radius: var(--border-radius);
+}
+
+progress[value]::after {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  --size: 32px;
+  width: var(--size);
+  height: var(--size);
+  position: absolute;
+  left: var(--progress-value-percent);
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--progress-value-color);
+  border-radius: 50%;
+  content: attr(value);
+  content: var(--progress-value-string, var(--value));
+  font-size: 12px;
+  font-weight: 700;
+  color: #fff;
+}
+
+@keyframes progress {
+	from {
+		--progress-value: 0;
+	} to {
+		--progress-value: var(--value);
+	}
+}
